@@ -1,0 +1,76 @@
+main {
+  padding-bottom: 50px;
+}
+main .container {
+  background-color: #fff;
+  box-shadow: 1px 1px 5px #ccc;
+}
+.process {
+  padding: 50px;
+}
+.process-head {
+  text-align: center;
+}
+.process-content li {
+  position: relative;
+  overflow: hidden;
+  padding-top: 50px;
+}
+.process-content .process-img,
+.process-content .process-desc {
+  text-align: center;
+}
+.process-content .process-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 150px;
+}
+.process-content .process-desc h3 {
+  margin-top: 0;
+}
+.process-content .process-img img {
+  width: 150px;
+  height: 150px;
+}
+.top-meals-head {
+  text-align: center;
+}
+.top-meals-content {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 10px 50px;
+}
+.top-meals-content li {
+  width: 24%;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 1px 1px 5px #ccc;
+  padding: 10px;
+}
+.top-meals-content li .top-img {
+  height: 255px;
+  overflow: hidden;
+}
+.top-meals-content li .top-img img {
+  width: 100%;
+  height: 100%;
+}
+.top-meals-content li .bottom-desc p {
+  padding: 0 10px;
+  text-align: left;
+}
+.top-meals-content li .bottom-desc p:last-child {
+  text-align: right;
+}
+.top-meals-content li .bottom-desc .price {
+  padding: 10px;
+  color: #70cacb;
+  border: 1px solid #70cacb;
+  border-radius: 5px;
+}
+.top-meals-content li .bottom-desc .price:hover {
+  background-color: #70cacb;
+  color: #fff;
+}

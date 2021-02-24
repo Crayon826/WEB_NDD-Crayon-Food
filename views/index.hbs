@@ -1,0 +1,80 @@
+{{>hero}}
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="process" id="process">
+        <div class="process-head">
+          <div class="h1">How it works</div>
+          <div class="h4">You can choose the combination you like or the package we
+            recommend.
+          </div>
+          <div class="h4">Starting at ＄7.99 per serving.</div>
+        </div>
+        <ul class="process-content">
+          <li>
+            <div class="process-desc col-md-6">
+              <h3>Choose what you like</h3>
+              <p>Freely choose the kind and weight you want</p>
+            </div>
+            <div class="process-img col-md-6">
+              <img src="/images/fork.png" alt="">
+            </div>
+          </li>
+          <li>
+            <div class="process-desc col-md-6 col-md-push-6">
+              <h3>Free Delivery</h3>
+              <p>Free delivery by our delivery staff</p>
+            </div>
+            <div class="process-img col-md-6 col-md-pull-6">
+              <img src="/images/delivery.png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="process-desc col-md-6">
+              <h3>Every week is a new set meal</h3>
+              <p>
+                It is cooked by our professional chef. If you don't like it,
+                it will be replaced for free.
+              </p>
+            </div>
+            <div class="process-img col-md-6">
+              <img src="/images/cooked.png" alt="" />
+            </div>
+          </li>
+          <li>
+            <div class="process-desc col-md-6 col-md-push-6">
+              <h3>High Quality</h3>
+              <p>
+                Strictty select the ingredients to ensure your food safety.
+              </p>
+            </div>
+            <div class="process-img col-md-6 col-md-pull-6">
+              <img src="/images/safety.png" alt="" />
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="top-meals" id="top-meals">
+        <div class="top-meals-head">
+          <div class="h1">Top meals</div>
+        </div>
+        <ul class="top-meals-content">
+          {{#each topMeals}}
+          <li class="col-md-3 col-xs-12">
+            <div class="top-img">
+              <img src="{{ImageUrl}}" alt="">
+            </div>
+            <div class="bottom-desc">
+              <p class="h3">{{Title}}</p>
+              <p class="h4">{{Description}}</p>
+              <p class="h5 ">
+                <span class="price">{{Price}}</span>
+              </p>
+            </div>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,29 @@
+<main>
+  <div class="container" id="menu">
+    <div class="row">
+      <div class="h1">{{category}}</div>
+      <ul class="meals-show">
+        {{#each result}}
+        <li class="col-md-6">
+          <div class="meals-content">
+            <div class="top-img">
+              <img src="{{ImageUrl}}" alt="">
+            </div>
+            <div class="bottom-info">
+              <div class="h3">{{Title}}</div>
+              <p>{{Included}}</p>
+              <p class="desc">{{Description}}</p>
+              <p>
+                Servings:{{Servings}}
+              </p>
+              <p>CookingTime:{{Time}}</p>
+              <p>Calories Per Serving:{{Calories}}</p>
+              <p><span class="price">{{Price}}</span></p>
+            </div>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</main>
