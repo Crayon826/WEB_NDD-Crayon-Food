@@ -4,9 +4,9 @@
  * Policy. No part of this assignment has been copied manually or electronically from
  * any other source (including web sites) or distributed to other students.
  *
- * Name:Tim Lin
+ * Name: Tim Lin
  * Student ID: 105586192
- * Course: 
+ * Course: WEB322NDD
  *
  ************************************************************************************/
 
