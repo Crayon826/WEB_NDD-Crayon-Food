@@ -15,4 +15,4 @@ Course: WEB322NDD
 
 GitHub Repository: https://github.com/Crayon826/WEB_NDD-Crayon-Food
 
-Heroku URL: https://<app_name>.herokuapp.com/
+Heroku URL: https://web-ndd-crayon-food.herokuapp.com/
