@@ -3,10 +3,18 @@
     <div class="row">
       <div class="login-wrapper col-md-6 col-md-offset-3 ">
         <div class="h2">Welcome Back</div>
+        <div class="error">{{err_msg}}</div>
         <div class="form">
           <form action="/login" method="POST">
             <div class="form-group">
-              <input type="text" placeholder="Email Address" value="{{email}}" name="email">
+              <div class="role">
+                <span>Select your role:</span>
+                <input type="radio" name="role" id="role" value="clerk"><span>Data Entry Clerk</span>
+                <input type="radio" name="role" id="role" value="customer" checked><span>Customer</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email Address" value="{{email}}" name="email">
               <div class="tips">
                 {{#showEmailTips}}
                 <span>Please enter a valid email address</span>

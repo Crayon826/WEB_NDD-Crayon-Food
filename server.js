@@ -10,15 +10,34 @@
  *
  ************************************************************************************/
 
-const express = require('express')
-const path = require('path')
-const hbs = require('express-handlebars')
-const indexRouter = require('./routes/index')
-const dotenv = require('dotenv')
-dotenv.config({ path: './config/keys.env' })
+ const express = require('express')
+ const path = require('path')
+ const hbs = require('express-handlebars')
+ const indexRouter = require('./routes/index')
+ const dotenv = require('dotenv')
+ const session = require('express-session')
+ const mongoose = require('mongoose')
+ dotenv.config({ path: './config/keys.env' })
+ const PORT = process.env.PORT
+
+ mongoose
+ .connect(process.env.MONGODB_URL, {
+   useNewUrlParser: true,
+   useUnifiedTopology: true,
+   useCreateIndex: true,
+ })
+ .then(() => {
+   console.log('Database link successful')
+ })
+ .catch((error) => {
+   console.log('Database link failed:')
+   console.log(error)
+ })
+
 const app = express()
 
 app.use(express.json())
+
 app.use(express.urlencoded({ extended: false }))
 
 app.use(express.static(path.join(__dirname, 'public')))
@@ -26,6 +45,14 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.engine('hbs', hbs({ extname: '.hbs', partialsDir: 'views/partials' }))
 
 app.set('view engine', 'hbs')
+
+app.use(
+ session({
+   secret: process.env.SESSION_SECRET,
+   resave: true,
+   saveUninitialized: true,
+ })
+)
 
 app.use('/', indexRouter)
 
@@ -35,7 +62,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500)
   res.send(err)
 })
-const PORT = process.env.PORT
+
 app.listen(PORT, function () {
   console.log(`web Server is up and running, post ${PORT}`)
 })
