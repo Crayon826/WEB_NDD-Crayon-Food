@@ -51,7 +51,14 @@ router.post('/signup', async (req, res) => {
     const showLastName = lastName.trim().length > 0 ? false : true
     const showEmail = !emailReg.test(email)
     const showPwd = !pwdReg.test(pwd)
-    if (showFirstName || showLastName || showEmail || showPwd) {
+    const isEmailExist = await User.find({ email })
+    if (
+      showFirstName ||
+      showLastName ||
+      showEmail ||
+      showPwd ||
+      isEmailExist.length
+    ) {
       return res.render('signup', {
         firstName,
         lastName,
@@ -61,6 +68,7 @@ router.post('/signup', async (req, res) => {
         showLastName,
         showEmail,
         showPwd,
+        isEmailExist,
         cssPath: 'signup',
       })
     } else {
