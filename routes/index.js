@@ -29,17 +29,20 @@ router.get('/menu', (req, res) => {
     category,
     result,
     cssPath: 'menu',
+    user: res.locals.user,
   })
 })
 router.get('/login', (req, res) => {
   return res.render('login', {
     err_msg: '',
     cssPath: 'signup',
+    user: res.locals.user,
   })
 })
 router.get('/signup', (req, res) => {
   return res.render('signup', {
     cssPath: 'signup',
+    user: res.locals.user,
   })
 })
 router.post('/signup', async (req, res) => {
@@ -132,20 +135,27 @@ router.post('/login', async (req, res) => {
 })
 router.get('/welcome/:info', (req, res) => {
   const { info } = req.params
-  return res.render('welcome', { info, cssPath: 'welcome' })
+  return res.render('welcome', {
+    info,
+    cssPath: 'welcome',
+    user: res.locals.user,
+  })
 })
 router.get('/clerk', loginGuard, async (req, res) => {
   return res.render('clerk', {
     cssPath: 'clerk',
+    user: res.locals.user,
   })
 })
 router.get('/customer', loginGuard, async (req, res) => {
   return res.render('customer', {
     cssPath: 'customer',
+    user: res.locals.user,
   })
 })
 router.get('/logout', async (req, res, next) => {
   req.session.user = null
+  req.session.role = null
   return res.redirect('/')
 })
 module.exports = router

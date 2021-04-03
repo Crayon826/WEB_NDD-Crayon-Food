@@ -32,7 +32,24 @@
           <a href="javascript:" class="theme">Gift Cards</a>
         </li>
       </ul>
-
+      {{#if user}}
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <div class="userName">
+            {{!-- <button type="button" class="btn btn-default navbar-btn btn-info">Log
+              in
+            </button> --}}
+            {{user.firstName}} {{user.lastName}}
+          </div>
+        </li>
+        <li>
+          <a href="/logout">
+            <button type="button" class="btn btn-default navbar-btn btn-danger">log out
+            </button>
+          </a>
+        </li>
+      </ul>
+      {{else}}
       <ul class="nav navbar-nav navbar-right">
         <li>
           <a href="/login">
@@ -49,6 +66,7 @@
           </a>
         </li>
       </ul>
+      {{/if}}
     </div>
   </div>
 </nav>

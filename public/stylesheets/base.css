@@ -49,6 +49,11 @@ ul {
   padding: 0 5px !important;
 }
 
+.navbar-right .userName {
+  height: 50px;
+  line-height: 50px;
+}
+
 .navbar-right a .btn {
   width: 100%;
   outline: transparent;
