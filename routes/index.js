@@ -8,13 +8,16 @@ const User = require('../model/user')
 const bcrypt = require('bcrypt')
 const salt = bcrypt.genSaltSync(10)
 const loginGuard = require('../middleware/loginGuard')
-router.get('*', (req, res, next) => {
-  const user = req.session.user
-  if (user) {
-    res.locals.user = user
-  }
-  next()
-})
+router.get('*', (req, res, next) => {
+    const user = req.session.user
+    if (user) {
+      res.locals.user = user
+    }
+    res.header('Cache-Control', 'no-store')
+    res.header('Expires', 0)
+    res.header('Pragma', 'no-cache')
+    next()
+  })
 router.get('/', (req, res, next) => {
   return res.render('index', {
     topMeals,
