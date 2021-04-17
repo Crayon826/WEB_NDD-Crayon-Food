@@ -1,3 +1,4 @@
+{{#css '/stylesheets/signup.css'}}{{/css}}
 <main>
   <div class="container" id="signup">
     <div class="row">
@@ -23,13 +24,13 @@
               </div>
             </div>
             <div class="form-group">
-              <input type="text" name="email" placeholder="Email Address" value="{{email}}">
+              <input type="email" name="email" placeholder="Email Address" value="{{email}}">
               <div class="tips">
                 {{#showEmail}}
                 <span>Please enter a valid email address</span>
                 {{/showEmail}}
                 {{#isEmailExist}}
-                <span>The email has been registered, please change other one</span>
+                <span>The email has been registered, please change one</span>
                 {{/isEmailExist}}
               </div>
             </div>
@@ -50,3 +51,4 @@
     </div>
   </div>
 </main>
+{{>footer}}

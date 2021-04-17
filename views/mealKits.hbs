@@ -1,0 +1,58 @@
+{{#css '/stylesheets/mealKits.css'}}{{/css}}
+<main>
+  <div class="container">
+    <div class="row">
+      <aside class="col-md-2 col-sm-2 col-xs-2">
+        <ul>
+          <li class="active"><a href="/clerk/viewMeals">View All Mealkits</a></li>
+          <li><a href="/clerk/createMeal">Create Mealkits</a></li>
+        </ul>
+      </aside>
+      <div class="content col-md-10 col-sm-10 col-xs-10">
+        {{#if allMealKits}}
+        <table class="table table-bordered table-hover" style="table-layout: fixed;">
+          <tr>
+            <th>title</th>
+            <th>What is included</th>
+            <th>descrition</th>
+            <th>category</th>
+            <th>price</th>
+            <th>cooking time</th>
+            <th>servings</th>
+            <th>calories per serving</th>
+            <th>Is it a topMeal</th>
+            <th>photo</th>
+            <th>operation</th>
+          </tr>
+          {{#each allMealKits}}
+          <tr>
+            <td>{{Title}}</td>
+            <td title="{{Included}}">{{Included}}</td>
+            <td class="desc" title="{{Description}}">{{Description}}</td>
+            <td title="{{Category}}">{{Category}}</td>
+            <td>＄{{Price}}</td>
+            <td>{{Cooking_Time}} minutes</td>
+            <td>{{Servings}}</td>
+            <td>{{Calories}}/serving</td>
+            {{#if TopMeal}}
+            <td>Yes</td>
+            {{else}}
+            <td>No</td>
+            {{/if}}
+            <td>
+              <img src="{{Image}}" alt="">
+            </td>
+            <td>
+              <a href="/clerk/edit/{{_id}}">
+                <button class="btn btn-primary">edit</button>
+              </a>
+            </td>
+          </tr>
+          {{/each}}
+        </table>
+        {{else}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</main>

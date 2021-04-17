@@ -1,13 +1,39 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
 main .container {
   padding: 50px 0;
+}
+.menu-section {
+  width: 100%;
+  background-color: #fff;
+}
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.menu-section .link {
+  color: black;
 }
 .h1 {
   padding: 10px 0;
   text-align: center;
+  font-size: 60px;
 }
-.meals-show li {
+.menu-section ul {
+  background-color: #fff;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+.menu-section ul li {
   margin-bottom: 30px;
-  background-color: rgb(245, 247, 251);
+}
+.meals-show a:hover {
+  text-decoration: none;
 }
 .meals-show li .meals-content {
   padding-bottom: 20px;
@@ -21,7 +47,8 @@ main .container {
 .meals-show .meals-content .bottom-info {
   padding: 0 20px;
 }
-.meals-show .meals-content p.desc {
+.meals-show .meals-content p.desc,
+.meals-show .meals-content .h3 {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;

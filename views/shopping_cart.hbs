@@ -1,0 +1,57 @@
+{{#css "/stylesheets/mealKits.css"}}{{/css}}
+<main>
+  <div class="container">
+    <div class="row">
+      <aside class="col-md-2 col-sm-2 col-xs-2">
+        <ul>
+          <li class="active"><a href="/customer/shopping_cart">Shopping Cart</a></li>
+        </ul>
+      </aside>
+      <div class="content col-md-10 col-sm-10 col-xs-10">
+        {{#if cart}}
+        <table class="table table-hover table-striped" style="table-layout: fixed;">
+          <tr>
+            <th>title</th>
+            <th>What is included</th>
+            <th>descrition</th>
+            <th>category</th>
+            <th>price</th>
+            <th>cooking time</th>
+            <th>servings</th>
+            <th>calories per serving</th>
+            <th>Is it a topMeal</th>
+            <th>photo</th>
+            <th>counts</th>
+          </tr>
+          {{#each cart}}
+          <tr>
+            <td>{{Title}}</td>
+            <td>{{Included}}</td>
+            <td class="desc" title="{{Description}}">{{Description}}</td>
+            <td>{{Category}}</td>
+            <td>＄{{Price}}</td>
+            <td>{{Cooking_Time}} minutes</td>
+            <td>{{Servings}}</td>
+            <td>{{Calories}}/serving</td>
+            {{#if TopMeal}}
+            <td>Yes</td>
+            {{else}}
+            <td>No</td>
+            {{/if}}
+            <td>
+              <img src="{{Image}}" alt="">
+            </td>
+            <td>
+              {{Counts}}
+            </td>
+          </tr>
+          {{/each}}
+        </table>
+        <a href="/customer/order">
+          <button class="orderBtn">Place your order</button>
+        </a>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</main>

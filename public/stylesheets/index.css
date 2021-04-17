@@ -1,3 +1,6 @@
+body {
+  display: block;
+}
 main {
   padding-bottom: 50px;
 }
@@ -48,6 +51,7 @@ main .container {
   text-align: center;
   box-shadow: 1px 1px 5px #ccc;
   padding: 10px;
+  padding-bottom: 50px;
 }
 .top-meals-content li .top-img {
   height: 255px;
@@ -65,10 +69,16 @@ main .container {
   text-align: right;
 }
 .top-meals-content li .bottom-desc .price {
-  padding: 10px;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  padding: 10px 0;
+  width: 60px;
+  text-align: center;
   color: #70cacb;
   border: 1px solid #70cacb;
   border-radius: 5px;
+  cursor: pointer;
 }
 .top-meals-content li .bottom-desc .price:hover {
   background-color: #70cacb;

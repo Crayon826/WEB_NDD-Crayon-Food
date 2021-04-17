@@ -1,36 +1,27 @@
+{{#css '/stylesheets/signup.css'}}{{/css}}
 <main>
   <div class="container" id="login">
     <div class="row">
       <div class="login-wrapper col-md-6 col-md-offset-3 ">
         <div class="h2">Welcome Back</div>
-        <div class="error">{{err_msg}}</div>
+        <div class="error">{{error}}</div>
         <div class="form">
-          <form action="/login" method="POST">
+          <form action="/login" method="POST" class="loginForm">
             <div class="form-group">
               <div class="role">
                 <span>Select your role:</span>
-                <input type="radio" name="role" id="role" value="clerk"><span>Data Entry Clerk</span>
-                <input type="radio" name="role" id="role" value="customer" checked><span>Customer</span>
+                <input type="radio" name="role" value="clerk"><span>Data Entry Clerk</span>
+                <input type="radio" name="role" value="customer" checked><span>Customer</span>
               </div>
             </div>
             <div class="form-group">
               <input type="email" placeholder="Email Address" value="{{email}}" name="email">
-              <div class="tips">
-                {{#showEmailTips}}
-                <span>Please enter a valid email address</span>
-                {{/showEmailTips}}
-              </div>
             </div>
             <div class="form-group">
               <input type="password" name="pwd" id="pwd" placeholder="Password" value="{{pwd}}" name="pwd">
-              <div class="tips">
-                {{#showPwdTips}}
-                <span>Please enter a valid password</span>
-                {{/showPwdTips}}
-              </div>
             </div>
             <div class="form-group">
-              <input type="submit" value="Login">
+              <input type="submit" value="Login" class="login_btn">
             </div>
           </form>
         </div>
@@ -38,3 +29,5 @@
     </div>
   </div>
 </main>
+{{>footer}}
+{{#js '/javascripts/login.js'}}{{/js}}

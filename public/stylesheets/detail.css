@@ -1,0 +1,54 @@
+.row {
+  text-align: center;
+}
+.food-img {
+  position: relative;
+  width: 100%;
+}
+.food-img img {
+  width: 100%;
+  height: 300px;
+}
+.food-img .info {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-top: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.cooking-time,
+.servings,
+.calories {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.food-img .info p:first-of-type {
+  font-size: 14px;
+  color: #000;
+}
+.food-img .info p:last-of-type {
+  color: #70cacb;
+  font-size: 16px;
+}
+.food-content .food-desc {
+  width: 80%;
+  margin: auto;
+}
+.addBtn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  color: #70cacb;
+  border: 2px solid #70cacb;
+  border-radius: 5px;
+  outline: transparent;
+}
+.addBtn:hover {
+  background-color: #70cacb;
+  color: #fff;
+}

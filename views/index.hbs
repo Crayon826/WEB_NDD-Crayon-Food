@@ -1,3 +1,4 @@
+{{#css '/stylesheets/index.css'}}{{/css}}
 {{>hero}}
 <main>
   <div class="container">
@@ -62,13 +63,13 @@
           {{#each topMeals}}
           <li class="col-md-3 col-xs-12">
             <div class="top-img">
-              <img src="{{ImageUrl}}" alt="">
+              <img src="{{Image}}" alt="">
             </div>
             <div class="bottom-desc">
               <p class="h3">{{Title}}</p>
               <p class="h4">{{Description}}</p>
               <p class="h5 ">
-                <span class="price">{{Price}}</span>
+                <span class="price">＄{{Price}}</span>
               </p>
             </div>
           </li>
@@ -78,3 +79,4 @@
     </div>
   </div>
 </main>
+{{>footer}}

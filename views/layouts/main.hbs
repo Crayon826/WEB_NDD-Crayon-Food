@@ -4,20 +4,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+  <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+  <META HTTP-EQUIV="Expires" CONTENT="0">
   <title>GoodFood</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/base.css">
-  <link rel="stylesheet" href="/stylesheets/{{cssPath}}.css">
+  {{#each cssList}}
+  <link rel="stylesheet" href="{{this}}">
+  {{/each}}
 </head>
 
 
 <body>
   {{>header}}
   {{{body}}}
-  {{>footer}}
   <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
-  <script src="javascripts/index.js"></script>
 </body>
 
 </html>

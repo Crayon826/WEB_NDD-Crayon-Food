@@ -1,0 +1,94 @@
+{{#css '/stylesheets/createMeals.css'}}{{/css}}
+<main>
+  <div class="container">
+    <div class="row">
+      <aside class="col-md-2 col-sm-2 col-xs-2">
+        <ul>
+          <li><a href="/clerk/viewMeals">View All Mealkits</a></li>
+          <li><a href="/clerk/createMeal">Create Mealkits</a></li>
+        </ul>
+      </aside>
+      <div class="content col-md-10 col-sm-10 col-xs-10">
+        <form method="POST" action="/clerk/editMeal" enctype="multipart/form-data">
+          <input type="hidden" name="_id" value="{{mealData._id}}">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="title" name="Title" required
+              value="{{mealData.Title}}">
+          </div>
+          <div class="form-group">
+            <label for="included">What is included</label>
+            <input type="text" class="form-control" id="included" placeholder="What is included?" name="Included"
+              required value="{{mealData.Included}}">
+          </div>
+          <div class="form-group">
+            <label for="descrition">descrition</label>
+            <textarea name="Description" id="descrition" class="form-control"
+              required>{{mealData.Description}}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="price">price</label>
+            <input type="number" class="form-control" id="price" placeholder="Enter your price" name="Price" required
+              value="{{mealData.Price}}">
+          </div>
+          <div class="form-group">
+            <label for="category">category</label>
+            <input type="text" class="form-control" id="category" name="Category" required
+              value="{{mealData.Category}}">
+          </div>
+          <div class="form-group">
+            <label for="cooking_time">cooking time</label>
+            <input type="number" class="form-control" id="cooking_time" name="Cooking_Time" required
+              value="{{mealData.Cooking_Time}}">
+          </div>
+          <div class="form-group">
+            <label for="servings">serving</label>
+            <input type="number" class="form-control" id="servings" name="Servings" required
+              value="{{mealData.Servings}}">
+          </div>
+          <div class="form-group">
+            <label for="calories">calories</label>
+            <input type="number" class="form-control" id="calories" name="Calories" required
+              value="{{mealData.Calories}}">
+          </div>
+          <div class="form-group">
+            <label for="">topMeal</label>
+            {{#if mealData.TopMeal}}
+            <div class="radio">
+              <label>
+                <input type="radio" name="TopMeal" id="optionsRadios1" value="true" checked>
+                Yes
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="TopMeal" id="optionsRadios2" value="false">
+                No
+              </label>
+            </div>
+            {{else}}
+            <div class="radio">
+              <label>
+                <input type="radio" name="TopMeal" id="optionsRadios1" value="true">
+                Yes
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="TopMeal" id="optionsRadios2" value="false" checked>
+                No
+              </label>
+            </div>
+            {{/if}}
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFile">photo</label>
+            <input type="file" id="exampleInputFile" name="Image" accept="image/gif,image/jpg,image/png">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="reset" class="btn btn-default">Reset</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

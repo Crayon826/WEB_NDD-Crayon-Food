@@ -1,29 +1,64 @@
+{{#css '/stylesheets/menu.css'}}{{/css}}
 <main>
   <div class="container" id="menu">
     <div class="row">
-      <div class="h1">{{category}}</div>
-      <ul class="meals-show">
-        {{#each result}}
-        <li class="col-md-6">
-          <div class="meals-content">
-            <div class="top-img">
-              <img src="{{ImageUrl}}" alt="">
-            </div>
-            <div class="bottom-info">
-              <div class="h3">{{Title}}</div>
-              <p>{{Included}}</p>
-              <p class="desc">{{Description}}</p>
-              <p>
-                Servings:{{Servings}}
-              </p>
-              <p>CookingTime:{{Time}}</p>
-              <p>Calories Per Serving:{{Calories}}</p>
-              <p><span class="price">{{Price}}</span></p>
-            </div>
-          </div>
-        </li>
-        {{/each}}
-      </ul>
+      <div class="menu-section">
+        <div class="h1">Top Meals</div>
+        <ul class="meals-show row">
+          {{#each topMeals}}
+          <li class="col-md-6 col-sm-6">
+            <a href="/detail/{{_id}}" class="link">
+              <div class="meals-content">
+                <div class="top-img">
+                  <img src="{{this.Image}}" alt="">
+                </div>
+                <div class="bottom-info">
+                  <div class="h3">{{Title}}</div>
+                  <p>{{Included}}</p>
+                  <p class="desc">{{Description}}</p>
+                  <p>
+                    Servings:{{Servings}}
+                  </p>
+                  <p>CookingTime:{{Cooking_Time}}</p>
+                  <p>Calories Per Serving:{{Calories}}</p>
+                  <p><span class="price">{{Price}}</span></p>
+                </div>
+              </div>
+            </a>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+      {{#each menu}}
+      <div class="menu-section">
+        <div class="h1">{{@key}}</div>
+        <ul class="meals-show row">
+          {{#each this}}
+          <li class="col-md-6 col-sm-6">
+            <a href="/detail/{{_id}}" class="link">
+              <div class="meals-content">
+                <div class="top-img">
+                  <img src="{{this.Image}}" alt="">
+                </div>
+                <div class="bottom-info">
+                  <div class="h3">{{Title}}</div>
+                  <p>{{Included}}</p>
+                  <p class="desc">{{Description}}</p>
+                  <p>
+                    Servings:{{Servings}}
+                  </p>
+                  <p>CookingTime:{{Cooking_Time}}</p>
+                  <p>Calories Per Serving:{{Calories}}</p>
+                  <p><span class="price">{{Price}}</span></p>
+                </div>
+              </div>
+            </a>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+      {{/each}}
     </div>
   </div>
 </main>
+{{>footer}}
