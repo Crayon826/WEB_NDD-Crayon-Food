@@ -45,7 +45,7 @@ router.get('/order', async (req, res) => {
     to: email,
     from: 'plin23@myseneca.ca ',
     subject: 'Order completed',
-    html: `Hello customer, you have purchased the following food: ${str} There are ${sum} kinds of food.`,
+    html: `You have purchased the following food: ${str} There are ${sum} kinds of food.`,
   })
   req.session.cart = null
   return res.redirect('/customer')
