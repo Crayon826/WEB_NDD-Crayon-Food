@@ -15,7 +15,7 @@ router.get('/addToCart/:_id', async (req, res) => {
   if (!req.session.user) {
     return res.redirect('/login')
   } else {
-    if (!req.session.role === 'customer') {
+    if (!(req.session.role === 'customer')) {
       return res.redirect('/')
     }
     if (!req.session.cart) {
