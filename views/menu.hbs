@@ -2,6 +2,7 @@
 <main>
   <div class="container" id="menu">
     <div class="row">
+      {{#if topMeals}}
       <div class="menu-section">
         <div class="h1">Top Meals</div>
         <ul class="meals-show row">
@@ -29,6 +30,7 @@
           {{/each}}
         </ul>
       </div>
+      {{/if}}
       {{#each menu}}
       <div class="menu-section">
         <div class="h1">{{@key}}</div>
