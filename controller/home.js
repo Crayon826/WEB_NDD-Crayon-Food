@@ -10,4 +10,13 @@ router.get('/', async (req, res, next) => {
   })
 })
 
+router.get('/personalCenter', (req, res) => {
+  const { role } = req.session
+  if (!role) {
+    return res.redirect('/login')
+  } else {
+    return res.redirect(`/${role}`)
+  }
+})
+
 module.exports = router

@@ -40,8 +40,30 @@
   width: 80%;
   margin: auto;
 }
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+.formgroup {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0 10px;
+}
+.formgroup input {
+  width: 50px;
+  height: 30px;
+  padding: 0 10px;
+  text-align: center;
+  border: none;
+  border: 1px solid #000;
+  border-radius: 5px;
+  outline: transparent;
+}
 .addBtn {
-  margin-top: 10px;
   padding: 5px 10px;
   color: #70cacb;
   border: 2px solid #70cacb;

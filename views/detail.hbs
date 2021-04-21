@@ -26,9 +26,19 @@
         </p>
         <p class="food-desc"> {{detailInfo.Description}}</p>
       </div>
-      <a href='/detail/addToCart/{{detailInfo._id}}'>
+      {{!-- <a href='/detail/addToCart/{{detailInfo._id}}'>
         <button class="addBtn">Add to order</button>
-      </a>
+      </a> --}}
+      <form action="/detail/addToCart" method="POST">
+        <input type="hidden" name="_id" value="{{detailInfo._id}}">
+        <div class="formgroup">
+          <label for="">Number: </label>
+          <input type="text" name="order_count" required>
+        </div>
+        <div class="formgroup">
+          <button class="addBtn">Add to order</button>
+        </div>
+      </form>
     </div>
   </div>
 </main>

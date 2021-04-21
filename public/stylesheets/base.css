@@ -23,7 +23,9 @@ body {
 ul {
   list-style-type: none;
 }
-
+a {
+  text-decoration: none;
+}
 main {
   flex: 1;
 }
@@ -46,57 +48,56 @@ main {
   background-color: #fff;
 }
 
-.navbar-right li {
+.navbar-right > li {
   position: relative;
   height: 50px;
 }
-.userInfo:hover .user-operation {
-  display: block;
+
+.userInfo {
+  position: relative;
 }
 
-.cart .glyphicon-shopping-cart {
-  padding-right: 5px;
-}
-.userInfo a {
-  text-decoration: none;
-  color: #000 !important;
-}
-.userInfo .user-operation {
-  display: none;
+.userInfo .down-menu {
+  overflow: hidden;
   position: absolute;
   top: 45px;
-  right: -10px;
-  width: 120px;
-  padding: 5px 0;
-  overflow: hidden;
+  left: 0;
+  width: 150px;
+  height: 0;
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 1px 1px 5px #ccc;
+  box-shadow: 2px 2px 10px #ccc;
+  transition: all 0.3s;
 }
-.userInfo .user-operation p {
-  margin: 0;
+.down-menu .menu-item {
+  padding: 10px;
 }
-.userInfo .user-operation a:hover {
-  background-color: #70cacb;
-  color: #fff !important;
+.down-menu .menu-item a {
+  text-decoration: none;
 }
-.userInfo .user-operation p a {
-  display: block !important;
-  padding: 5px !important;
-  color: #70cacb !important;
+.menu-item:hover {
+  background-color: #ddd;
+}
+.userInfo .glyphicon-menu-down {
+  margin-right: 5px;
+  transition: all 0.3s ease-in-out;
+}
+.userInfo:hover .glyphicon-menu-down {
+  transform: rotateZ(180deg);
+}
+.userInfo:hover .down-menu {
+  height: 50px;
 }
 .theme {
   color: #70cacb !important;
 }
 .navbar-right li {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.navbar-right a {
-  display: flex !important;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.navbar-right a {
   padding: 0 5px !important;
 }
 

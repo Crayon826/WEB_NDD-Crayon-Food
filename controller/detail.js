@@ -10,8 +10,9 @@ router.get('/:_id', async (req, res) => {
   })
 })
 
-router.get('/addToCart/:_id', async (req, res) => {
-  const { _id } = req.params
+router.post('/addToCart', async (req, res) => {
+  let { order_count, _id } = req.body
+  order_count = parseInt(order_count)
   if (!req.session.user) {
     return res.redirect('/login')
   } else {
@@ -24,7 +25,7 @@ router.get('/addToCart/:_id', async (req, res) => {
     if (req.session.cart[_id]) {
       req.session.cart[_id]++
     } else {
-      req.session.cart[_id] = 1
+      req.session.cart[_id] = order_count
     }
   }
   return res.redirect('/customer')

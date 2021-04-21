@@ -24,17 +24,19 @@
         <li>
           <a href="/customer/shopping_cart" class="theme">Shopping cart</a>
         </li>
-        <li>
-          <a href="/clerk/viewMeals" class="theme">View meals</a>
-        </li>
       </ul>
 
       {{#if user}}
       <ul class="nav navbar-nav navbar-right">
         <li class="userInfo">
-          <a href="javascript:">
-            {{user.firstName}} {{user.lastName}}
-          </a>
+          <span class="glyphicon glyphicon-menu-down theme"></span>
+          <span class="theme">{{user.firstName}} {{user.lastName}}</span>
+          <ul class="down-menu">
+            <li class="menu-item">
+              <span class="glyphicon glyphicon-user theme"></span>
+              <a href="/personalCenter" class="theme">personalCenter</a>
+            </li>
+          </ul>
         </li>
         <li>
           <a href="/logout">

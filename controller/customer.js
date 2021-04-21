@@ -26,7 +26,7 @@ router.get('/shopping_cart', async (req, res) => {
 })
 
 router.get('/order', async (req, res) => {
-  const { email } = req.session.user
+  const { email, firstName, lastName } = req.session.user
   const cartList = Object.keys(req.session.cart)
   let result = []
   let str = ''
@@ -37,7 +37,7 @@ router.get('/order', async (req, res) => {
     result.push(target)
   }
   for (let i = 0; i < result.length; i++) {
-    str += result[i].Counts + " " + result[i].Title + ','
+    str += result[i].Counts + ' ' + result[i].Title + '</br>'
     sum += result[i].Counts
   }
   sgMail.setApiKey(process.env.SEND_GRID_API_KEY)
@@ -45,7 +45,9 @@ router.get('/order', async (req, res) => {
     to: email,
     from: 'plin23@myseneca.ca ',
     subject: 'Order completed',
-    html: `You have purchased the following food: ${str} There are ${sum} kinds of food.`,
+    html: `Hello ${firstName} ${lastName}, You have purchased ${sum} kinds of food.</br>
+     ${str} 
+     `,
   })
   req.session.cart = null
   return res.redirect('/customer')
