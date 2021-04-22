@@ -17,6 +17,7 @@ router.get('/shopping_cart', async (req, res) => {
       target.Counts = req.session.cart[id]
       cart.push(target)
     }
+    cart = cart.filter((v) => v.Counts > 0)
   }
 
   return res.render('shopping_cart', {

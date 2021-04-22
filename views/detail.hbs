@@ -33,7 +33,7 @@
         <input type="hidden" name="_id" value="{{detailInfo._id}}">
         <div class="formgroup">
           <label for="">Number: </label>
-          <input type="text" name="order_count" required>
+          <input type="text" name="order_count" required pattern="^[1-9]\d*$">
         </div>
         <div class="formgroup">
           <button class="addBtn">Add to order</button>
